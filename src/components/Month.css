@@ -1,0 +1,52 @@
+.month h1 {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  margin: 0;
+  margin-top: 1.5rem;
+}
+
+.month__year {
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+.month-grid {
+  border: 1rem solid white;
+  background: linear-gradient(#e66465, #9198e5);
+  color: #fff;
+}
+
+.month-row,
+.month-header-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day {
+  width: 100%;
+  text-align: right;
+  min-height: calc(100vh / 7);
+  border-top: 0.25rem solid #fff;
+  border-right: 0.25rem solid #fff;
+  padding: 0.5rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.day:last-child {
+  border-right: none;
+}
+
+.month-header-row {
+  background: #fff;
+  color: #333;
+}
+
+.month-header-row__label {
+  width: 100%;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+}

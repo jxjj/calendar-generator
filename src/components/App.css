@@ -1,0 +1,40 @@
+.App {
+  min-height: 100%;
+  margin: auto;
+  display: flex;
+}
+.app-drawer {
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+  margin-right: 1rem;
+}
+.preview {
+  flex-grow: 1;
+}
+
+.app-header h1 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.input-group {
+  margin: 1rem 0;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.input-group input,
+.input-group select {
+  font-size: 1.5rem;
+  width: 100%;
+  display: block;
+  padding: 0.25rem 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.input-group:focus {
+  border-bottom-color: #333;
+}
