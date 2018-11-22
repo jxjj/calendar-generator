@@ -29,7 +29,7 @@ const MonthHeaderRow = () => {
   );
 };
 
-export default ({ year, month }) => {
+export default ({ year, month, startColor, endColor }) => {
   const monthArray = getMonthAs2DArray(year, month);
 
   // replace non-month dates with ''
@@ -37,13 +37,17 @@ export default ({ year, month }) => {
     row.map(DateTime.fromISO).map(d => (d.month === month ? d.day : ""))
   );
 
+  const monthStyle = {
+    background: `linear-gradient(${startColor}, ${endColor})`
+  };
+
   return (
     <div className="month">
       <h1>
         <span className="month__name">{getMonthLong(month)}</span>
         <span className="month__year">{year}</span>
       </h1>
-      <div className="month-grid">
+      <div className="month-grid" style={monthStyle}>
         <MonthHeaderRow />
         {cleanMonth.map((dates, i) => (
           <MonthRow key={i} dates={dates} />

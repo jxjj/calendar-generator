@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { DateTime } from "luxon";
+import { ChromePicker } from "react-color";
 import Month from "./Month";
 import SelectMonth from "./SelectMonth";
 
@@ -11,6 +12,8 @@ export default function App() {
 
   const [year, setYear] = useState(currentYear);
   const [month, setMonth] = useState(currentMonth);
+  const [gradientStart, setGradientStart] = useState("#e66465");
+  const [gradientEnd, setGradientEnd] = useState("#9198e5");
 
   function handleMonthChange(e) {
     setMonth(Number.parseInt(e.target.value, 10));
@@ -18,6 +21,13 @@ export default function App() {
 
   function handleYearChange(e) {
     setYear(Number.parseInt(e.target.value, 10));
+  }
+
+  function handleGradientStartChange(color) {
+    setGradientStart(color.hex);
+  }
+  function handleGradientEndChange(e) {
+    setGradientEnd(e.target.value);
   }
 
   return (
@@ -40,10 +50,35 @@ export default function App() {
               onChange={handleMonthChange}
             />
           </div>
+          <div className="input-group">
+            <label>Start Color</label>
+            {/* <input
+              type="text"
+              value={gradientStart}
+              onChange={handleGradientStartChange}
+            /> */}
+            <ChromePicker
+              color={gradientStart}
+              onChangeComplete={handleGradientStartChange}
+            />
+          </div>
+          <div className="input-group">
+            <label>End Color</label>
+            <input
+              type="text"
+              value={gradientEnd}
+              onChange={handleGradientEndChange}
+            />
+          </div>
         </form>
       </div>
       <section className="preview">
-        <Month month={month} year={year} />
+        <Month
+          month={month}
+          year={year}
+          startColor={gradientStart}
+          endColor={gradientEnd}
+        />
       </section>
     </div>
   );
