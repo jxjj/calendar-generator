@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "luxon": "^1.7.1",
+    "luxon": "^2.5.2",
     "react": "^16.7.0-alpha",
     "react-color": "^2.14.1",
     "react-dom": "^16.7.0-alpha",
